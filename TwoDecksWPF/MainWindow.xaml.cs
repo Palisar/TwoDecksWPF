@@ -46,6 +46,52 @@ namespace TwoDecksWPF
                 }
                 
             }
-        }           
+        }
+
+        private void shuffleLeftDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["leftDeck"] is Deck leftDeck)
+            {
+                leftDeck.Shuffle();
+            }
+        }
+
+        private void resetLeftDeck_Click(object sender, RoutedEventArgs e)
+        {
+            if (Resources["leftDeck"] is Deck leftDeck)
+            {
+                leftDeck.Reset();
+            }
+        }
+
+        private void clearRightDeck_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sortRightDeck_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void leftDeckListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void leftDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void rightDeckListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void rightDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
