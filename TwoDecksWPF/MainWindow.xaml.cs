@@ -23,8 +23,10 @@ namespace TwoDecksWPF
         public MainWindow()
         {
             InitializeComponent();
-            Deck rightDeck = new();
-            rightDeck.Clear();
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Clear();
+            }
         }
         private void MoveCard(bool leftToRight)
         {
@@ -66,32 +68,38 @@ namespace TwoDecksWPF
 
         private void clearRightDeck_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Clear();
+            }
         }
 
         private void sortRightDeck_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Resources["rightDeck"] is Deck rightDeck)
+            {
+                rightDeck.Sort();
+            }
         }
 
         private void leftDeckListBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            MoveCard(e.Key == Key.Enter);
         }
 
         private void leftDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MoveCard(true);
         }
 
         private void rightDeckListBox_KeyDown(object sender, KeyEventArgs e)
         {
-
+            MoveCard(e.Key == Key.Enter);
         }
 
         private void rightDeckListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            MoveCard(false);
         }
     }
 }

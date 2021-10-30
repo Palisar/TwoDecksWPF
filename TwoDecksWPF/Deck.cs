@@ -17,9 +17,9 @@ namespace TwoDecksWPF
         public void Reset()
         {
             Clear();
-            for (int value = 1; value <= 13; value++)
+            for (int suit = 0; suit <= 3; suit++)
             {
-                for (int suit = 0; suit <= 3; suit++)
+                for (int value = 1; value <= 13; value++)
                 {
                     Add(new Card((Values)value, (Suits)suit));
                 }
